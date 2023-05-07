@@ -39,4 +39,3 @@ const billCounter = (target) => {
   return billList;
 }
 
-console.log(billCounter(547))
