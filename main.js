@@ -1,16 +1,27 @@
 import { BillCounter } from "./utils/BillCounter.js";
 import { RenderAsDollarStrings } from "./utils/RenderAsDollarStrings.js";
 
-const bills = BillCounter(257);
+const billForm = document.getElementById('bill-form')
 
-const stringBills = RenderAsDollarStrings(bills);
+billForm.addEventListener("submit", e => {
+  e.preventDefault();
 
-const list = document.getElementById("bill-list");
+  const billInput = document.getElementById('total').value;
 
-stringBills.forEach(item => {
-  const listItem = document.createElement("li");
-  listItem.textContent = item;
-  list.appendChild(listItem);
+  const bills = BillCounter(parseInt(billInput, 10));
+
+  const stringBills = RenderAsDollarStrings(bills);
+
+  const list = document.getElementById("bill-list");
+  list.innerHTML = ""; 
+
+  stringBills.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = item;
+    list.appendChild(listItem);
+  });
+
 })
 
-console.log(stringBills)
+
+
