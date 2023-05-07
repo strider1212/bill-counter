@@ -1,5 +1,3 @@
-
-
 export const RenderList = (bills) => {
   const list = document.getElementById("bill-list");
 
