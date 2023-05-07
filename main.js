@@ -1,6 +1,17 @@
 import { BillCounter } from "./utils/BillCounter.js";
-import { RenderList } from "./utils/RenderList.js";
 
-const bills = BillCounter(150)
+const bills = BillCounter(257)
 
-RenderList(bills)
+const renderAsDollarStrings = list => {
+  let newBillsList = [];
+
+  for (let i = 0; i < list.length; i++) {
+    newBillsList.push(`$${bills[i]}`)
+  }
+
+  return newBillsList;
+}
+
+const stringBills = renderAsDollarStrings(bills)
+
+console.log(stringBills)
