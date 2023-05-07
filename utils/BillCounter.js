@@ -1,4 +1,4 @@
-export const billCounter = (target) => {
+export const BillCounter = (target) => {
   let billList = [];
   
   const billListTotal = () => {
